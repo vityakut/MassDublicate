@@ -1,4 +1,3 @@
 [
-    { "caption": "MassDublicate: Insert fragment", "command": "mass_dublicate" },
-    { "caption": "MassDublicate: get fragment", "command": "get_num_dublicate" }
+    { "caption": "MassDublicate: Dublicate selection", "command": "mass_dublicate" },
 ]

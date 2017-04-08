@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 
 
-class MassDublicateCommand(sublime_plugin.TextCommand):
+class MassDublicateInsertCommand(sublime_plugin.TextCommand):
 	def run_(self, edit_token, args):
 		args = self.filter_args(args)
 		if args:
@@ -20,14 +20,14 @@ class MassDublicateCommand(sublime_plugin.TextCommand):
 
 
 
-class GetNumDublicateCommand(sublime_plugin.WindowCommand):
+class MassDublicateCommand(sublime_plugin.WindowCommand):
 	def run(self):
-		self.window.show_input_panel("Количество дубликатов:", "", self.on_done, None, None)
+		self.window.show_input_panel("Number of dublicate:", "", self.on_done, None, None)
 
 
 	def on_done(self, num):
 
 		if num.isdigit():
-			self.window.run_command("mass_dublicate", num)
+			self.window.run_command("mass_dublicate_insert", num)
 		else:
 			sublime.status_message("Error: " + num + " is not number")
